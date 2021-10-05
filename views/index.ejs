@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/img/icon.png">
+    <link rel="apple-touch-icon" href="/img/btc180.png" sizes="180x180">
+    <link rel="apple-touch-icon" href="/img/btc120.png" sizes="120x120">
+    <link rel="apple-touch-icon" href="/img/btc114.png" sizes="114x114">
+    <link rel="apple-touch-icon" href="/img/btc57.png">
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Crypto Wallet</title>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Exchange</th>
+                <th scope="col">Balance PLN</th>
+                <th scope="col">Balance USD</th>
+                <th scope="col">P/L PLN</th>
+                <th scope="col">Invested PLN</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for (const w of wallets) { %>
+                <tr>
+                    <th scope="row"><%= w.name %></th>
+                    <td><%= w.plnBalance %></td>
+                    <td><%= w.usdtBalance %></td>
+                    <td number-data="<%= w.plnProfit %>"></td>
+                    <td><%= w.plnInvested %></td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+</body>
+
+</html>

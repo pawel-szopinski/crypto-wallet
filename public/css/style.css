@@ -1,0 +1,43 @@
+body {
+    font-family: sans-serif, -apple-system, system-ui;
+    color: #2E3440;
+}
+
+td,
+th {
+    border: 1px solid #D8DEE9;
+    padding: 10px;
+}
+
+td {
+    text-align: right;
+}
+
+td[number-data]:after {
+    content: attr(number-data);
+}
+
+td[number-data^="-"]:after {
+    color: #BF616A;
+}
+
+th[scope="col"] {
+    background-color: #3B4252;
+    color: #ECEFF4;
+}
+
+th[scope="row"] {
+    background-color: #E5E9F0;
+}
+
+table {
+    border-collapse: collapse;
+    border: 2px solid #D8DEE9;
+    font-size: 1rem;
+    caption-side: bottom;
+}
+
+caption {
+    padding: 10px 5px;
+    text-align: left;
+}
