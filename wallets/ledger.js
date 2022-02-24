@@ -1,17 +1,17 @@
 const fetch = require('node-fetch');
 
 const name = 'Ledger';
-const uri = 'https://bitbay.net/API/Public/$ticker/ticker.json';
-const btcPlnTicker = 'BTCPLN';
-const ethPlnTicker = 'ETHPLN';
-const btcUsdtTicker = 'BTCUSDT';
-const ethUsdtTicker = 'ETHUSDT';
+const uri = 'https://api.zonda.exchange/rest/trading/ticker/$ticker';
+const btcPlnTicker = 'BTC-PLN';
+const ethPlnTicker = 'ETH-PLN';
+const btcUsdtTicker = 'BTC-USDT';
+const ethUsdtTicker = 'ETH-USDT';
 
 async function getSingleCoinValue(ticker, amount) {
     const response = await fetch(uri.replace('$ticker', ticker));
     const json = await response.json();
 
-    return json.ask * amount;
+    return json.ticker.lowestAsk * amount;
 }
 
 async function getLedgerData(btcAmount, ethAmount, plnInvested) {
